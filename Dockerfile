@@ -2,7 +2,7 @@ FROM openjdk:8-jre-alpine
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
-ADD tomcat /usr/local/
+ADD tomcat /usr/local/tomcat
 WORKDIR $CATALINA_HOME
 
 # let "Tomcat Native" live somewhere isolated
