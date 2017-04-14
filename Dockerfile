@@ -1,8 +1,11 @@
 FROM openjdk:8-jre-alpine
 
+ADD localtime /etc/localtime
+RUN echo "Asia/Shanghai" > /etc/timezone
+
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
-ADD tomcat /usr/local/tomcat
+ADD tomcat $CATALINA_HOME
 WORKDIR $CATALINA_HOME
 
 # let "Tomcat Native" live somewhere isolated
